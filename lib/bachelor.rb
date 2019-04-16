@@ -17,8 +17,8 @@ end
 def get_average_age_for_season(data, season)
   age = 0
   contestants = 0
-  data[season].each do |contestant_hash|
-    age += (contestant_hash["age"]).to_i
+  data[season].each do |season_contestant|
+    age += (season_contestant["age"]).to_i
     contestants += 1
   end
   (age / contestants.to_f).round(0)
