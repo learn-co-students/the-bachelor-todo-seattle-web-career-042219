@@ -1,12 +1,8 @@
 def get_first_name_of_season_winner(data, season)
   # code here
-  data.each do |season_number, contestants_array|
-    if season_number == season
-      contestants_array.each do |contestant|
-        if contestant["status"] == "Winner"
-          return contestant["name"].split(" ")[0]
-        end
-      end
+  data[season].each do |contestant|
+    if contestant["status"] == "Winner"
+      return contestant["name"].split(" ")[0]
     end
   end
 end
@@ -49,12 +45,8 @@ end
 def get_average_age_for_season(data, season)
   # code here
   array_of_ages_for_season = []
-  data.each do |season_number, contestants_array|
-    if season_number == season
-      contestants_array.each do |contestant|
-        array_of_ages_for_season << contestant["age"].to_f
-      end
-    end
+  data[season].each do |contestant|
+    array_of_ages_for_season << contestant["age"].to_f
   end
   return (array_of_ages_for_season.sum / array_of_ages_for_season.length).round
 end
