@@ -71,4 +71,3 @@ describe "bachelor" do
   end
 
 end
-
